@@ -1,13 +1,19 @@
 <template>
-  <HelloWorld msg="Hello Vue 3 + Vite"></HelloWorld>
+  <Header></Header>
+  <Main></Main>
+  <Footer></Footer>
 </template>
 
 <script>
-import HelloWorld from "./HelloWorld.vue";
+import Header from "./Header.vue";
+import Main from "./Main.vue";
+import Footer from "./foot.vue";
 export default {
   components: {
-    HelloWorld,
-  },
+    Header,
+    Main,
+    Footer
+  }
 };
 </script>
 

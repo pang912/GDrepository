@@ -5,10 +5,10 @@
 </script>
 
 <template>
-  <div style="margin-bottom: 30px">
-    <router-link to="/home">Go to Home</router-link>
-  </div>
-  <img alt="Vue logo" src="./assets/logo.png" />
+  <!-- <div style="margin-bottom: 30px"> -->
+    <!-- <router-link to="/home">Go to Home</router-link> -->
+  <!-- </div> -->
+  <!-- <img alt="Vue logo" src="./assets/logo.png" /> -->
   <!-- <HelloWorld msg="Hello Vue 3 + Vite" /> -->
   <router-view></router-view>
 </template>
@@ -20,6 +20,15 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  /* margin-top: 60px; */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #e9ecef;
 }
 </style>
