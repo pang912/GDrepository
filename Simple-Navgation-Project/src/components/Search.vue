@@ -7,13 +7,11 @@
     </ul>
     <div class="search-nav">
       <div class="search-toggle-btn">
-        <img src="../../public/favicon.ico" alt="" />
+        <img src="/favicon.ico" alt="" />
         {{ title }}
       </div>
       <input type="text" :placeholder="description" />
-      <!-- <div class="search-btn"> -->
-      <button class="icon-search"></button>
-      <!-- </div> -->
+      <button>搜索</button>
     </div>
   </div>
 </template>
@@ -73,7 +71,6 @@ export default {
 
 <style scoped>
 .search {
-  box-sizing: border-box;
   display: flex;
   flex-flow: column;
   width: 1500px;
@@ -105,22 +102,22 @@ export default {
 
 .search-nav {
   display: flex;
-  justify-content: start;
+  justify-content: center;
   position: relative;
   margin: 0 auto;
   width: 80%;
 }
 
 .search-toggle-btn {
-  width: 9%;
-  border: 1px solid #ced4da;
+  width: 80px;
+  border: 1px solid #e9ecef;
   border-top-left-radius: 0.25rem;
   border-bottom-left-radius: 0.25rem;
   cursor: pointer;
 }
 
-.search-toggle-btn :hover {
-  background: #fff;
+.search-toggle-btn:hover {
+  background: #ced4da;
 }
 
 .search-nav img {
@@ -129,24 +126,34 @@ export default {
 }
 
 .search-nav input {
-  width: 100%;
-  padding: 5px;
-  box-sizing: border-box;
+  width: calc(100% - 80px);
+  padding: 5px 0 5px 10px;
   border: 1px solid #ced4da;
+  border-radius: 0 5px 5px 0;
   outline: none;
+}
+
+.search-nav input:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: #4788cf;
+  box-shadow: 0 0 0 0.2rem rgb(31 73 119 / 25%);
 }
 
 .search-nav button {
+  position: absolute;
+  right: 0px;
+  width: 60px;
+  height: 100%;
   outline: none;
   border: 0;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  background: #e9ecef;
 }
 
-.icon-search {
-  background: url(../../public/favicon.ico) no-repeat;
-  background-size: 22px 22px;
-  width: 27px;
-  height: 27px;
-  /* padding-top: 5px; */
+.search-nav button:hover {
+  background: #ced4da;
 }
 
 @media only screen and (max-width: 1600px) {

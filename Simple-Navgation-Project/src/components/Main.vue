@@ -10,11 +10,13 @@
           <li v-for="item in requestData.data" class="linkNodes">
             <div class="remoteAddress" @click="openLink(item)">
               <div style="width: 20%">
-                <img src="../../public/favicon.ico" alt="" />
+                <img src="/favicon.ico" alt="" />
               </div>
               <div style="padding-left: 10px">
                 <div style="font-size: 16px">{{ item.title }}</div>
-                <div style="font-size: 12px">{{ item.description }}</div>
+                <div class="linkDes" :title="item.description">
+                  {{ item.description }}
+                </div>
               </div>
             </div>
           </li>
@@ -48,7 +50,8 @@ export default {
           },
           {
             title: "这是一个标题",
-            description: "这是一段介绍",
+            description:
+              "这是一段介绍这是一段介绍这是一段介绍这是一段介绍这是一段介绍这是一段介绍这是一段介绍这是一段介绍这是一段介绍这是一段介绍这是一段介绍这是一段介绍这是一段介绍这是一段介绍这是一段介绍这是一段介绍",
             remoteLink: "https://www.baidu.com",
             iconSrc:
               "https://img0.baidu.com/it/u=2299005931,568974025&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500",
@@ -166,7 +169,6 @@ export default {
 
 <style scoped>
 .content {
-  box-sizing: border-box;
   display: flex;
   flex-flow: column;
   width: 1500px;
@@ -192,8 +194,7 @@ export default {
   margin-bottom: 20px;
 }
 .linkNodes {
-  box-sizing: border-box;
-  width: 12.5%;
+  width: 25%;
   margin-bottom: 15px;
   padding: 5px 10px;
   list-style-type: none;
@@ -205,21 +206,28 @@ export default {
 
 .linkNodes .remoteAddress {
   display: flex;
+  height: 110px;
   color: #000;
   cursor: pointer;
   color: #ee9a49;
   padding: 5px 10px;
   border: 1px solid #ccc;
+  /* overflow: hidden; */
 }
 
 .linkNodes .remoteAddress :hover {
   box-shadow: none;
 }
 
-@media only screen and (max-width: 1533px) {
-  .linkNodes {
-    width: 25%;
-  }
+.linkDes {
+  font-size: 12px;
+  height: 80px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+  text-align: start;
 }
 
 @media only screen and (max-width: 1600px) {

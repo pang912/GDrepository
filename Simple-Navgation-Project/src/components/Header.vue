@@ -3,15 +3,42 @@
     <div class="navBar">
       <a>简易导航</a>
       <div class="navbar-collapse">
-        <div>111</div>
-        <div>222</div>
+        <div class="nav-title">
+          <div v-for="item in headerData">{{ item.title }}</div>
+        </div>
+        <div>24K导航</div>
       </div>
     </div>
   </header>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      headerData: [
+        {
+          title: "首页",
+        },
+        {
+          title: "手册",
+        },
+        {
+          title: "书籍",
+        },
+        {
+          title: "公号",
+        },
+        {
+          title: "脱单",
+        },
+        {
+          title: "交流群",
+        },
+      ],
+    };
+  },
+};
 </script>
 
 <style scoped>
@@ -37,5 +64,11 @@ header {
   display: flex;
   justify-content: space-between;
   width: 90%;
+}
+
+.navBar .nav-title {
+  display: flex;
+  justify-content: space-around;
+  width: 40%;
 }
 </style>
