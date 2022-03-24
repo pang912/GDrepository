@@ -1,10 +1,12 @@
 <template>
   <header>
     <div class="navBar">
-      <a>简易导航</a>
+      <a class="nav-one">简易导航</a>
       <div class="navbar-collapse">
-        <div class="nav-title">
-          <div v-for="item in headerData">{{ item.title }}</div>
+        <div class="nav-link">
+          <div v-for="item in headerData">
+            <a href="#">{{ item.title }}</a>
+          </div>
         </div>
         <div>24K导航</div>
       </div>
@@ -54,7 +56,7 @@ header {
   width: 92%;
   margin: 0 auto;
 }
-.navBar a {
+.navBar .nav-one {
   display: flex;
   width: 10%;
   padding-left: 20px;
@@ -63,12 +65,47 @@ header {
 .navBar .navbar-collapse {
   display: flex;
   justify-content: space-between;
-  width: 90%;
+  width: 85%;
 }
 
-.navBar .nav-title {
+.navbar-collapse > div:nth-child(2):hover {
+  font-weight: bold;
+}
+
+.navBar .nav-link {
   display: flex;
   justify-content: space-around;
-  width: 40%;
+  width: 400px;
+}
+
+.nav-link div {
+  position: relative;
+}
+
+.nav-link div:hover {
+  font-weight: bold;
+}
+
+.nav-link div a {
+  text-decoration: none;
+  color: #fff;
+  padding: 12.46px 14px;
+}
+
+.nav-link div a::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 2px;
+  width: 0%;
+  height: 2px;
+  background: #db6c4a;
+  transition: all 0.3s;
+}
+
+.nav-link div a:hover::before {
+  width: 100%;
+  left: 0;
+  right: 0;
 }
 </style>

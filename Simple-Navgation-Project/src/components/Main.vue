@@ -9,11 +9,15 @@
         <ul class="linkList">
           <li v-for="item in requestData.data" class="linkNodes">
             <div class="remoteAddress" @click="openLink(item)">
-              <div style="width: 20%">
-                <img src="/favicon.ico" alt="" />
+              <div>
+                <!-- <div style="width: 20%"> -->
+                <img src="../assets/x_cd-cover.png" alt="" />
               </div>
-              <div style="padding-left: 10px">
-                <div style="font-size: 16px">{{ item.title }}</div>
+              <div>
+                <!-- <div style="padding-left: 10px;"> -->
+                <div style="font-size: 16px; text-align: start">
+                  {{ item.title }}
+                </div>
                 <div class="linkDes" :title="item.description">
                   {{ item.description }}
                 </div>
@@ -212,15 +216,23 @@ export default {
   color: #ee9a49;
   padding: 5px 10px;
   border: 1px solid #ccc;
-  /* overflow: hidden; */
 }
 
 .linkNodes .remoteAddress :hover {
   box-shadow: none;
 }
 
+.linkNodes .remoteAddress > div:nth-child(1) {
+  width: 20%;
+}
+
+.linkNodes .remoteAddress > div:nth-child(2) {
+  padding-left: 10px;
+}
+
 .linkDes {
   font-size: 12px;
+  width: 235px;
   height: 80px;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -237,7 +249,28 @@ export default {
   }
 }
 
-@media only screen and (max-width: 835px) {
+@media only screen and (max-width: 1492px) {
+  .linkDes {
+    width: 100%;
+  }
+  .linkNodes .remoteAddress > div:nth-child(1) {
+    width: 17%;
+  }
+}
+
+@media only screen and (max-width: 1250px) {
+  .linkNodes .remoteAddress > div:nth-child(1) {
+    width: 20%;
+  }
+}
+
+@media only screen and (max-width: 1130px) {
+  .linkNodes .remoteAddress > div:nth-child(1) {
+    width: 28%;
+  }
+}
+
+@media only screen and (max-width: 890px) {
   .linkNodes {
     width: 50%;
   }
@@ -248,4 +281,6 @@ export default {
     width: 100%;
   }
 }
+
+
 </style>

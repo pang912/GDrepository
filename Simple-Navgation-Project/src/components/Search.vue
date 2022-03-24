@@ -7,7 +7,7 @@
     </ul>
     <div class="search-nav">
       <div class="search-toggle-btn">
-        <img src="/favicon.ico" alt="" />
+        <img src="../assets/x_wave.png" alt="" />
         {{ title }}
       </div>
       <input type="text" :placeholder="description" />
