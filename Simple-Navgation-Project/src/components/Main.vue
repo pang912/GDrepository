@@ -1,13 +1,14 @@
 <template>
   <div>
     <Search></Search>
+    <SideBar>111</SideBar>
     <div class="content">
       <section>
         <div class="category">
           <span>图书类</span>
         </div>
         <ul class="linkList">
-          <li v-for="item in requestData.data" class="linkNodes">
+          <li class="linkNodes" v-for="item in requestData.data">
             <div class="remoteAddress" @click="openLink(item)">
               <div>
                 <!-- <div style="width: 20%"> -->
@@ -33,9 +34,12 @@
 
 <script>
 import Search from "./Search.vue";
+import SideBar from "./sideBar.vue";
 export default {
   components: {
     Search,
+    SideBar,
+    // SideBar: () => import("./sideBar.vue"),
   },
   data() {
     return {
@@ -194,9 +198,9 @@ export default {
 .linkList {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
   margin-bottom: 20px;
 }
+
 .linkNodes {
   width: 25%;
   margin-bottom: 15px;
@@ -205,7 +209,8 @@ export default {
 }
 
 .linkNodes :hover {
-  box-shadow: 10px 10px 10px #ccc;
+  box-shadow: 0px 0px 20px 5px #ccc;
+  transition: all 1s;
 }
 
 .linkNodes .remoteAddress {
@@ -281,6 +286,4 @@ export default {
     width: 100%;
   }
 }
-
-
 </style>
