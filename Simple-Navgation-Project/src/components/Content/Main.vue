@@ -1,24 +1,27 @@
 <template>
   <div>
-    <Search></Search>
-    <SideBar>111</SideBar>
+    <SideBar></SideBar>
     <div class="content">
       <section>
+        <!-- 分类 -->
         <div class="category">
           <span>图书类</span>
         </div>
+        <!-- 导航链接列表 -->
         <ul class="linkList">
+          <!-- 链接项 -->
           <li class="linkNodes" v-for="item in requestData.data">
             <div class="remoteAddress" @click="openLink(item)">
               <div>
-                <!-- <div style="width: 20%"> -->
-                <img src="../assets/x_cd-cover.png" alt="" />
+                <!-- 链接图标 -->
+                <img src="../../assets/x_cd-cover.png" alt="" />
               </div>
               <div>
-                <!-- <div style="padding-left: 10px;"> -->
+                 <!-- 链接标题 -->
                 <div style="font-size: 16px; text-align: start">
                   {{ item.title }}
                 </div>
+                <!-- 链接描述 -->
                 <div class="linkDes" :title="item.description">
                   {{ item.description }}
                 </div>
@@ -33,13 +36,10 @@
 
 
 <script>
-import Search from "./Search.vue";
 import SideBar from "./sideBar.vue";
 export default {
   components: {
-    Search,
     SideBar,
-    // SideBar: () => import("./sideBar.vue"),
   },
   data() {
     return {

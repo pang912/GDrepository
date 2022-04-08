@@ -1,21 +1,31 @@
 <template>
   <header>
+    <!-- 导航栏 -->
     <div class="navBar">
+      <!-- 导航首项 -->
       <a class="nav-one">简易导航</a>
+      <!-- 导航中间项 -->
       <div class="navbar-collapse">
         <div class="nav-link">
           <div v-for="item in headerData">
             <a href="#">{{ item.title }}</a>
           </div>
         </div>
+        <!-- 导航右项 -->
         <div>24K导航</div>
       </div>
     </div>
   </header>
+  <!-- 搜索栏 -->
+  <Search />
 </template>
 
 <script>
+import Search from "./Search.vue";
 export default {
+  components: {
+    Search,
+  },
   data() {
     return {
       headerData: [

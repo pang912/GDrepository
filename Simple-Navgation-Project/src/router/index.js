@@ -8,12 +8,7 @@ const routes = [
   {
     path: '/home',
     name: 'home',
-    component: () => import('../components/Home.vue')
-  },
-  {
-    path: '/main',
-    name: 'main',
-    component: () => import('../components/Main.vue')
+    component: () => import('../components/Content/Main.vue')
   }
 ]
 

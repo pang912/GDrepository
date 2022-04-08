@@ -1,16 +1,21 @@
 <template>
   <div class="search">
-    <ul class="search-list">
+    <!-- 搜索引擎 -->
+    <ul class="search-engine">
       <li v-for="item in list" @click="engineChange($event, item)">
         {{ item.title }}
       </li>
     </ul>
-    <div class="search-nav">
-      <div class="search-toggle-btn">
-        <img src="../assets/x_wave.png" alt="" />
+    <!-- 搜索栏 -->
+    <div class="search-input">
+      <!-- 引擎名称 -->
+      <div class="engine-name">
+        <img src="../../assets/x_wave.png" alt="" />
         {{ title }}
       </div>
+      <!-- 搜索输入框 -->
       <input type="text" :placeholder="description" />
+      <!-- 搜索按钮 -->
       <button>搜索</button>
     </div>
   </div>
@@ -51,13 +56,13 @@ export default {
     };
   },
   mounted() {
-    let li1 = document.querySelector(".search-list li");
+    let li1 = document.querySelector(".search-engine li");
     li1.classList.add("selected");
   },
   methods: {
     engineChange(e, i) {
       console.log(e, i);
-      let li = document.querySelectorAll(".search-list li");
+      let li = document.querySelectorAll(".search-engine li");
       li.forEach((i) => {
         i.classList.remove("selected");
       });
@@ -80,7 +85,7 @@ export default {
   border-radius: 10px;
 }
 
-.search-list {
+.search-engine {
   display: flex;
   justify-content: space-around;
   margin: 10px auto;
@@ -88,19 +93,19 @@ export default {
   width: 80%;
 }
 
-.search-list li {
+.search-engine li {
   list-style-type: none;
   color: #999;
   font-size: 15px;
   cursor: pointer;
 }
 
-.search-list .selected {
+.search-engine .selected {
   border-bottom: 2px solid #000;
   color: #000;
 }
 
-.search-nav {
+.search-input {
   display: flex;
   justify-content: center;
   position: relative;
@@ -108,7 +113,7 @@ export default {
   width: 80%;
 }
 
-.search-toggle-btn {
+.engine-name {
   width: 80px;
   border: 1px solid #e9ecef;
   border-top-left-radius: 0.25rem;
@@ -116,16 +121,16 @@ export default {
   cursor: pointer;
 }
 
-.search-toggle-btn:hover {
+.engine-name:hover {
   background: #ced4da;
 }
 
-.search-nav img {
+.search-input img {
   width: 20px;
   vertical-align: text-top;
 }
 
-.search-nav input {
+.search-input input {
   width: calc(100% - 80px);
   padding: 5px 0 5px 10px;
   border: 1px solid #ced4da;
@@ -133,14 +138,14 @@ export default {
   outline: none;
 }
 
-.search-nav input:focus {
+.search-input input:focus {
   color: #495057;
   background-color: #fff;
   border-color: #4788cf;
   box-shadow: 0 0 0 0.2rem rgb(31 73 119 / 25%);
 }
 
-.search-nav button {
+.search-input button {
   position: absolute;
   right: 0px;
   width: 60px;
@@ -152,7 +157,7 @@ export default {
   background: #e9ecef;
 }
 
-.search-nav button:hover {
+.search-input button:hover {
   background: #ced4da;
 }
 
